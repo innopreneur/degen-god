@@ -1,6 +1,6 @@
-#Strategy #1 - Uniswap New Pair 
+## Strategy #1 - Uniswap New Pair 
 
-####Idea - Constantly lookout for new pairs added to Uniswap. If the pair is new or has very low mcap, then do a background manual check on following
+#### Idea - Constantly lookout for new pairs added to Uniswap. If the pair is new or has very low mcap, then do a background manual check on following
 	
 	
 	1) Website
