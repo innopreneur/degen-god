@@ -1,9 +1,9 @@
 var mongoose = require('mongoose')
 require('dotenv').config()
 
-let password = encodeURI(process.env.DB_PASSWORD)
+console.log(process.env.DB_PASSWORD)
 mongoose.connect(
-  `mongodb+srv://${process.env.DB_USER}:${password}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`,
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true }
 )
 
