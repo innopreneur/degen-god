@@ -5,7 +5,7 @@ export async function s1Job() {
   console.log(Date.now() + ': Executing S1 Job')
   let newTotalPairs = await getPairLength()
   console.log('New Pairs length - ', newTotalPairs)
-  let oldTotalPairs = 32020 //await getTotalPairsFromDB()
+  let oldTotalPairs = await getTotalPairsFromDB()
   console.log('Old Pairs length - ', oldTotalPairs)
   let diff = newTotalPairs - oldTotalPairs
   if (diff > 0) {
