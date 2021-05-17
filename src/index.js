@@ -4,7 +4,11 @@ const routes = require("./routes/index.js")
 const db = require("../db-connect.js")
 require("dotenv").config()
 const app = express()
-import { scheduleS1Job, scheduleGasJob } from "./core/scheduler"
+import {
+  scheduleS1Job,
+  scheduleGasJob,
+  scheduleLiquidationJob
+} from "./core/scheduler"
 
 // parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }))
@@ -14,6 +18,7 @@ app.use(express.json())
 app.use(cors())
 app.use("/", routes)
 
+/*
 db.on("error", () => {
   console.error.bind(console, "connection error:")
   process.exit(10)
@@ -29,4 +34,9 @@ db.once("open", async function() {
   app.listen(process.env.PORT, function() {
     console.log(`Server started on Port - ${process.env.PORT}`)
   })
+}) */
+
+app.listen(process.env.PORT, function() {
+  console.log(`Server started on Port - ${process.env.PORT}`)
+  scheduleLiquidationJob()
 })
