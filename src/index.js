@@ -38,5 +38,5 @@ db.once("open", async function() {
 
 app.listen(process.env.PORT, function() {
   console.log(`Server started on Port - ${process.env.PORT}`)
-  scheduleLiquidationJob()
+  //scheduleLiquidationJob()
 })
